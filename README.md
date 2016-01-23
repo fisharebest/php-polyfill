@@ -46,8 +46,8 @@ The following additional polyfills are provided by this package:
 PHP 5.3
 =======
 
- - If the server has enabled “magic quotes”, these are removed.
- - If the server has enabled "bug_compat_42", this is disabled.
+ - If the server has enabled `magic quotes`, these are removed.
+ - If the server has enabled `bug_compat_42`, this is disabled.
 
 
 PHP 5.4
@@ -61,7 +61,7 @@ This implementation can only get the current status code if it was also set by
 PHP (general)
 =============
 
- - Some builds of PHP (such as the one used by strato.de) do not define INF.
+ - Some builds of PHP (such as the one used by strato.de) do not define the constant `INF`.
 
 Contributions
 =============
