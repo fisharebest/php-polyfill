@@ -1,5 +1,9 @@
 language: php
 
+cache:
+  directories:
+    - ~/.composer/cache
+
 matrix:
   include:
     - php: 5.3
@@ -20,7 +24,9 @@ matrix:
 sudo: false
 
 install:
-  - COMPOSER_MEMORY_LIMIT=-1 composer update --no-interaction --verbose
+  - mv /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ~/xdebug.ini
+  - COMPOSER_MEMORY_LIMIT=-1 composer update --no-interaction
+  - mv ~/xdebug.ini /home/travis/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
 script:
   - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
